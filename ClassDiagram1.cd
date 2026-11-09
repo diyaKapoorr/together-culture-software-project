@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="member_space.AdminDashboard">
+    <Position X="0.5" Y="9.25" Width="2.75" />
+    <NestedTypes>
+      <Class Name="member_space.AdminDashboard.Feedback" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>AdminDashboard.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>IDAAAAEAECAAABYoAACAYAAWAMw7AAEAwHAPAQBAQAA=</HashCode>
+      <FileName>AdminDashboard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.AdminPinboardForm" Collapsed="true">
+    <Position X="6.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAACAAAFAAAACAAAACABAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>AdminPinboardForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.BillingHistory" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAASAAAAgBAACIAAACAAgoAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>BillingHistory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.ChangePassword">
+    <Position X="5" Y="14" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAKAAAAAAAACECCACAEAAABCQEAAAAAEAAAI=</HashCode>
+      <FileName>ChangePassword.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.ContactAdmin" Collapsed="true">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAQAACAAAASAAAIEAAAEEAAAAAEAAA=</HashCode>
+      <FileName>ContactAdmin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.dataBaseHelper">
+    <Position X="4.75" Y="10.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgCAAAAAAQAAAAAQAAAAAAAACAAAAA=</HashCode>
+      <FileName>dataBaseHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.Eventavtivity" Collapsed="true">
+    <Position X="7.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAACAAEAgAAACAAAACAAggAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Eventavtivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.EventSearch" Collapsed="true">
+    <Position X="9.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQAAQQAISAQARRCCRCIABICABAAABQgAmAAAEDAA0A=</HashCode>
+      <FileName>EventSearch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.ForgetPassword">
+    <Position X="13.25" Y="10" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAQCAQAAgAABHgAAACACAAAAAAAAAAA4AAEAA=</HashCode>
+      <FileName>ForgetPassword.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.memberDashboard" Collapsed="true">
+    <Position X="5.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EDgAIFEAgCIQBBIBogLgIACCA8G4AQAAkHQMIQBCYWA=</HashCode>
+      <FileName>memberDashboard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.collab" Collapsed="true">
+    <Position X="9.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBgAAEAAAiAABAIAAACgAAACAAk4AAAAAAAQAQDAECA=</HashCode>
+      <FileName>collab.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.digitalContent" Collapsed="true">
+    <Position X="6" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACIAABAAAACAAAACAAAIAAAAAAAAAQCAAAA=</HashCode>
+      <FileName>digitalContent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.feedback" Collapsed="true">
+    <Position X="2.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAAAQAACAAABKAAACAQBICAAQAAAAAAAAAAQCAAAA=</HashCode>
+      <FileName>feedback.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.Feedback" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAQAAIAAAAAA=</HashCode>
+      <FileName>feedback.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.EventBooking" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAQAACACABAAAACAAAJCAAAIAAAAEAAIAQAAAAA=</HashCode>
+      <FileName>eventBookingForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.about" Collapsed="true">
+    <Position X="10" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAACAQAAAAAACAAAACAAAAAAAAAAAQAABAAAA=</HashCode>
+      <FileName>about.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.blog" Collapsed="true">
+    <Position X="7" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAACAAAAAAAACAAAASAAAAAAAAEAAAAABAAAA=</HashCode>
+      <FileName>blog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.eventCalendar" Collapsed="true">
+    <Position X="9.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACgAAAEAAACAAAACAEAYAEAAAEAQAAAAAAA=</HashCode>
+      <FileName>eventCalendar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.shop" Collapsed="true">
+    <Position X="8.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAIAQBASAAABAAAACAAABSIMA4AAAAMHAMAABAAAA=</HashCode>
+      <FileName>shop.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.paymentInfo" Collapsed="true">
+    <Position X="4.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCAAACQAASAAABDQEACACABCIAAMAAAAEEABAAAAgIA=</HashCode>
+      <FileName>paymentInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.purchase" Collapsed="true">
+    <Position X="13.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAQAACAAABAAAACAAAACAAAIAAAAAEAAAAAAAIA=</HashCode>
+      <FileName>purchase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.FrontPage">
+    <Position X="10.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAABCAAAAUAAACAAAACAMA5gAEAAHAeAQBAAAA=</HashCode>
+      <FileName>FrontPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.InteractiveCalendar" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBAAAAQCACEAABgAAACAAAACABAEAAAEAAAAAQAAIAI=</HashCode>
+      <FileName>InteractiveCalendar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.Login">
+    <Position X="9" Y="9.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACJAAIgAAACoAAErAIAAEAAIAAAgAABEAAg=</HashCode>
+      <FileName>Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="member_space.MemberInsightDashboard">
+    <Position X="17.5" Y="8.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>dAAAAASAACAAABCACACAAAACAMg7AAAAQGAHAQAAAAA=</HashCode>
+      <FileName>MemberInsights.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
