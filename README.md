@@ -55,6 +55,20 @@ member space.sln
 
 > The original project did not include a database schema export, so database recreation is required before all features can run.
 
+## Application Screenshots
+
+### Home Page
+![Together Culture Home Page](screenshots/home-page.png)
+
+### Member Dashboard
+![Member Dashboard](screenshots/member-dashboard.png)
+
+### Admin Dashboard
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
+### Member Insights
+![Member Insights Dashboard](screenshots/member-insights.png)
+
 ## Portfolio Note
 
 This repository is a cleaned portfolio snapshot of a university **team software engineering project**. Visual Studio cache files, build outputs, NuGet package caches and the previous Git repository metadata have been excluded.
