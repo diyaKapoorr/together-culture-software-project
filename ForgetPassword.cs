@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient; // Ensure you include MySQL library
@@ -12,7 +12,7 @@ namespace member_space
             InitializeComponent();
         }
 
-        public string connectionString = "Server=127.0.0.1;Database=together_culture;Uid=root;Pwd=;";
+        public string connectionString = DatabaseConnection.ConnectionString;
 
 
 
@@ -36,7 +36,7 @@ namespace member_space
             // Input validation
             if (string.IsNullOrEmpty(textBfpUsername.Text.Trim()))
             {
-                MessageBox.Show("Please enter your username.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter your email.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

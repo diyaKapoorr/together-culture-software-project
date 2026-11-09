@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
@@ -7,7 +7,7 @@ namespace member_space
 {
     public partial class memberList : Form
     {
-        public string connectionString = "Server=127.0.0.1;Database=together_culture;Uid=root;Pwd=;";
+        public string connectionString = DatabaseConnection.ConnectionString;
 
         public memberList()
         {

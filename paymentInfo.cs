@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -95,7 +95,7 @@ namespace member_space
         }
         private void SavePaymentToDatabase(string memberId, string Pay_for)
         {
-            string connectionString = "Server=127.0.0.1;Database=together_culture;Uid=root;Pwd=;";
+            string connectionString = DatabaseConnection.ConnectionString;
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {

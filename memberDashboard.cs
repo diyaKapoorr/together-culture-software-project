@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,7 +45,7 @@ namespace member_space
 
         {
             //Establishing connection to the MySql Server
-            string connectionString = "Server=127.0.0.1;Database=together_culture;Uid=root;Pwd=;";
+            string connectionString = DatabaseConnection.ConnectionString;
             //member_space.DatabaseConnection
             MySqlConnection connection = new MySqlConnection(connectionString);
 
@@ -351,7 +351,7 @@ namespace member_space
         private string LoadEvent()
         {
             string eventDetails = "Upcoming Events:\n\n";
-            string connectionString = "Server=127.0.0.1;Database=together_culture;Uid=root;Pwd=;";
+            string connectionString = DatabaseConnection.ConnectionString;
             string query = "SELECT * FROM EventActivity";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {

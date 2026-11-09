@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,7 +46,7 @@ namespace member_space
         {
             // Display or use the email as needed
             MessageBox.Show("Welcome Non-Member with Email: " + email, "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            string connectionString = "Server=127.0.0.1;Database=together_culture;Uid=root;Pwd=;";
+            string connectionString = DatabaseConnection.ConnectionString;
 
             try
             {

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -79,7 +79,7 @@ namespace member_space
 
         private void Form11_Load(object sender, EventArgs e)
         {
-            string connectionString = "Server=127.0.0.1;Database=together_culture;Uid=root;Pwd=;";
+            string connectionString = DatabaseConnection.ConnectionString;
 
             try
             {

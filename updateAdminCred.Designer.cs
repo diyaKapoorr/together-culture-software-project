@@ -1,4 +1,4 @@
-﻿namespace member_space
+namespace member_space
 {
     partial class updateAdminCred
     {
@@ -79,7 +79,7 @@
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(124, 29);
             this.labelEmail.TabIndex = 3;
-            this.labelEmail.Text = "Username";
+            this.labelEmail.Text = "Email";
             this.labelEmail.Click += new System.EventHandler(this.labelEmail_Click);
             // 
             // labelPass

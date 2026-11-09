@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +14,7 @@ namespace member_space
 {
     public partial class InteractiveCalendar : Form
     {
-        string connectionString = "Server=127.0.0.1;Database=together_culture;Uid=root;Pwd=;";
+        string connectionString = DatabaseConnection.ConnectionString;
 
         public void ConnectionCheck() 
         {

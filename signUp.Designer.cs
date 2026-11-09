@@ -1,4 +1,4 @@
-﻿namespace member_space
+namespace member_space
 {
     partial class signUp
     {
@@ -80,7 +80,7 @@
             this.Lusername.Name = "Lusername";
             this.Lusername.Size = new System.Drawing.Size(102, 25);
             this.Lusername.TabIndex = 5;
-            this.Lusername.Text = "Username";
+            this.Lusername.Text = "Email";
             // 
             // Lpassword
             // 

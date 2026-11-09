@@ -1,24 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using System;
 using MySql.Data.MySqlClient;
+
 namespace member_space
 {
-    // A class to call for the database connection instead of adding it everytime its needed
+    // Central database connection configuration.
+    // Real database credentials are read from environment variables so that
+    // passwords do not need to be committed to GitHub.
     public class DatabaseConnection
     {
-        //
-        private string connection_String;
-        public DatabaseConnection() 
+        public static string ConnectionString
         {
-            connection_String = "Server=127.0.0.1;Database=together_culture;Uid=root;Pwd=;";
+            get
+            {
+                string user = Environment.GetEnvironmentVariable("TC_DB_USER");
+                string password = Environment.GetEnvironmentVariable("TC_DB_PASSWORD");
+
+                if (string.IsNullOrWhiteSpace(user))
+                {
+                    user = "root";
+                }
+
+                MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder
+                {
+                    Server = "127.0.0.1",
+                    Database = "together_culture",
+                    UserID = user,
+                    Password = password ?? ""
+                };
+
+                return builder.ConnectionString;
+            }
         }
+
         public MySqlConnection get_Connection()
-        { 
-            return new MySqlConnection(connection_String); 
+        {
+            return new MySqlConnection(ConnectionString);
         }
-     }
+    }
 }

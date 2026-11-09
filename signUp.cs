@@ -1,134 +1,137 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.OleDb;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace member_space
 {
     public partial class signUp : Form
     {
-        // Define the connection string for your database
-        public string connectionString = "Server=127.0.0.1;Database=together_culture;Uid=root;Pwd=;";
-
         public signUp()
         {
             InitializeComponent();
         }
 
-        // Event handler for Form Load - currently unused
         private void signUp_Load(object sender, EventArgs e)
         {
-            // Populate the combo box with security questions
-            // combobxSecurityQues.Items.Add("Name of the city you were born in?");
-            // combobxSecurityQues.Items.Add("Name of the first school you went to?");
-            // combobxSecurityQues.Items.Add("Name of your first pet?");
+            // Security questions can also be configured in the WinForms Designer.
         }
 
-        // Register Button Click event handler
+        // Register button.
         private void ButtonRegister_Click(object sender, EventArgs e)
         {
-            // Check for empty fields
-            if (string.IsNullOrEmpty(txtbUsername.Text) ||
-                string.IsNullOrEmpty(txtbPassword.Text) ||
-                string.IsNullOrEmpty(txtbConfirmpass.Text) ||
-                string.IsNullOrEmpty(textBxFirstName.Text) ||
-                string.IsNullOrEmpty(textBxLastname.Text) ||
-                string.IsNullOrEmpty(dateTimePicker2.ToString()) ||
+            string email = txtbUsername.Text.Trim();
+            string firstName = textBxFirstName.Text.Trim();
+            string lastName = textBxLastname.Text.Trim();
+            string securityAnswer = textbSecurityQuesAns.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(email) ||
+                string.IsNullOrWhiteSpace(txtbPassword.Text) ||
+                string.IsNullOrWhiteSpace(txtbConfirmpass.Text) ||
+                string.IsNullOrWhiteSpace(firstName) ||
+                string.IsNullOrWhiteSpace(lastName) ||
                 combobxSecurityQues.SelectedItem == null ||
-                string.IsNullOrEmpty(textbSecurityQuesAns.Text))
+                string.IsNullOrWhiteSpace(securityAnswer))
             {
-                // Display error message if any field is empty
-                MessageBox.Show("All fields are required.", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    "All fields are required.",
+                    "Registration Failed",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
             }
-            else if (txtbPassword.Text == txtbConfirmpass.Text) // Validate if passwords match
+
+            if (txtbPassword.Text != txtbConfirmpass.Text)
             {
-                try
-                {
-                    // Initialize the database helper
-                    dataBaseHelper dbHelper = new dataBaseHelper();
-                    string errorMessage;
+                MessageBox.Show(
+                    "Passwords do not match. Please re-enter.",
+                    "Registration Failed",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
 
-                    // Insert user data into the database using the helper class
-                    bool isInserted = dbHelper.InsertLogindetailsAndNonmember(
-                        textBxFirstName.Text,
-                        textBxLastname.Text,
-                        txtbUsername.Text,
-                        txtbPassword.Text,
-                        combobxSecurityQues.SelectedItem.ToString(),
-                        textbSecurityQuesAns.Text,
-                        dateTimePicker2.ToString(),
-                        out errorMessage);
-
-                    // If data is successfully inserted
-                    if (isInserted)
-                    {
-                        // Clear fields after successful registration
-                        txtbUsername.Text = "";
-                        txtbPassword.Text = "";
-                        txtbConfirmpass.Text = "";
-                        textBxFirstName.Text = "";
-                        textBxLastname.Text = "";
-                        combobxSecurityQues.SelectedItem = null;
-                        textbSecurityQuesAns.Text = "";
-                        dateTimePicker2.ToString();
-
-                        // Display success message and open login form
-                        MessageBox.Show("Your account has been successfully created", "Registration Success", MessageBoxButtons.OK);
-                        new Login().Show(); // Open the Login form
-                        this.Close(); // Close the current form
-                    }
-                    else
-                    {
-                        // Display error message if insertion fails
-                        MessageBox.Show("An error occurred: " + errorMessage, "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    // Handle unexpected errors
-                    MessageBox.Show("An unexpected error occurred: " + ex.Message, "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                // If passwords do not match, display error and reset fields
-                MessageBox.Show("Passwords do not match. Please re-enter.", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtbPassword.Text = "";
                 txtbConfirmpass.Text = "";
-                txtbPassword.Focus(); // Focus back on the password field
+                txtbPassword.Focus();
+                return;
+            }
+
+            if (dateTimePicker2.Value.Date > DateTime.Today)
+            {
+                MessageBox.Show(
+                    "Date of birth cannot be in the future.",
+                    "Registration Failed",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                dataBaseHelper dbHelper = new dataBaseHelper();
+                string errorMessage;
+
+                bool isInserted = dbHelper.InsertLogindetailsAndNonmember(
+                    firstName,
+                    lastName,
+                    email,
+                    txtbPassword.Text,
+                    combobxSecurityQues.SelectedItem.ToString(),
+                    securityAnswer,
+                    dateTimePicker2.Value.Date,
+                    out errorMessage);
+
+                if (isInserted)
+                {
+                    txtbUsername.Clear();
+                    txtbPassword.Clear();
+                    txtbConfirmpass.Clear();
+                    textBxFirstName.Clear();
+                    textBxLastname.Clear();
+                    combobxSecurityQues.SelectedItem = null;
+                    textbSecurityQuesAns.Clear();
+                    dateTimePicker2.Value = DateTime.Today;
+
+                    MessageBox.Show(
+                        "Your account has been successfully created.",
+                        "Registration Success",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
+                    new Login().Show();
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "An error occurred: " + errorMessage,
+                        "Registration Failed",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "An unexpected error occurred: " + ex.Message,
+                    "Registration Failed",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
-        // Checkbox to Show/Hide Password
         private void CHbxShowPass_CheckedChanged(object sender, EventArgs e)
         {
-            if (CHbxShowPass.Checked) // If checkbox is checked, show password
-            {
-                txtbPassword.PasswordChar = '\0';
-                txtbConfirmpass.PasswordChar = '\0';
-            }
-            else // If checkbox is unchecked, mask the password
-            {
-                txtbPassword.PasswordChar = '*';
-                txtbConfirmpass.PasswordChar = '*';
-            }
+            char passwordCharacter = CHbxShowPass.Checked ? '\0' : '*';
+
+            txtbPassword.PasswordChar = passwordCharacter;
+            txtbConfirmpass.PasswordChar = passwordCharacter;
         }
 
-        // Event handler to navigate back to Login form
         private void LbacktoLogin_Click(object sender, EventArgs e)
         {
-            new Login().Show(); // Open the Login form
-            this.Close(); // Close the current form
+            new Login().Show();
+            Close();
         }
 
-        // TextChanged Event Handlers (currently unused)
+        // Existing Designer event handlers.
         private void txtbPassword_TextChanged(object sender, EventArgs e) { }
         private void textbSecurityQuesAns_TextChanged(object sender, EventArgs e) { }
         private void combobxSecurityQues_SelectedIndexChanged(object sender, EventArgs e) { }

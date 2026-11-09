@@ -1,4 +1,4 @@
-﻿namespace member_space
+namespace member_space
 {
     partial class ForgetPassword
     {
@@ -45,7 +45,7 @@
             this.lFPusername.Name = "lFPusername";
             this.lFPusername.Size = new System.Drawing.Size(102, 25);
             this.lFPusername.TabIndex = 0;
-            this.lFPusername.Text = "Username";
+            this.lFPusername.Text = "Email";
             // 
             // comboBfpSequrityQues
             // 

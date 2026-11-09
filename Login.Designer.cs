@@ -1,4 +1,4 @@
-﻿namespace member_space
+namespace member_space
 {
     partial class Login
     {
@@ -116,7 +116,7 @@
             this.Llogusername.Name = "Llogusername";
             this.Llogusername.Size = new System.Drawing.Size(102, 25);
             this.Llogusername.TabIndex = 16;
-            this.Llogusername.Text = "Username";
+            this.Llogusername.Text = "Email";
             // 
             // Llogin
             // 
